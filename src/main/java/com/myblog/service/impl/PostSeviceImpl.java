@@ -18,26 +18,21 @@ import java.util.stream.Collectors;
 
 @Service
 public class PostSeviceImpl implements PostService {
-
-    public PostSeviceImpl(PostRepository postRepository)
-    {
-        this.postRepository = postRepository;
-
-    }
-
-    public PostSeviceImpl(CommentRepository commentRepository) {
-        this.commentRepository = commentRepository;
-    }
-
     private CommentRepository commentRepository;
 
     private PostRepository postRepository;
-
-    public PostSeviceImpl(ModelMapper modelMapper) {
+    private ModelMapper modelMapper;
+    public PostSeviceImpl(PostRepository postRepository,CommentRepository commentRepository,ModelMapper modelMapper)
+    {
+        this.postRepository = postRepository;
+        this.commentRepository = commentRepository;
         this.modelMapper = modelMapper;
+
     }
 
-    private ModelMapper modelMapper;
+
+
+
 
 
 

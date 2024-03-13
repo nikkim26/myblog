@@ -15,12 +15,13 @@ import java.util.List;
 @RequestMapping("/api/post")
 public class PostController {
 
-
+    private PostService postService;
     public PostController(PostService postService) {
+
         this.postService = postService;
     }
 
-    private PostService postService;
+
 
 
 @PostMapping
